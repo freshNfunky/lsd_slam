@@ -1,118 +1,53 @@
 cmake_minimum_required(VERSION 2.8.7)
 project(lsd_slam_core)
+if(NOT BUILD_WITHOUT_ROS)
+    include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 
-# Set the build type. Options are:
-#  Coverage : w/ debug symbols, w/o optimization, w/ code-coverage
-#  Debug : w/ debug symbols, w/o optimization
-#  Release : w/o debug symbols, w/ optimization
-#  RelWithDebInfo : w/ debug symbols, w/ optimization
-#  MinSizeRel : w/o debug symbols, w/ optimization, stripped binaries
-set(CMAKE_BUILD_TYPE Release)
+    # Set the build type.  Options are:
+    #  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
+    #  Debug          : w/ debug symbols, w/o optimization
+    #  Release        : w/o debug symbols, w/ optimization
+    #  RelWithDebInfo : w/ debug symbols, w/ optimization
+    #  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
+    set(ROS_BUILD_TYPE Release)
 
-find_package(catkin REQUIRED COMPONENTS
-  cmake_modules
-  #lsd_slam_viewer
-  cv_bridge
-  dynamic_reconfigure
-  sensor_msgs
-  image_transport
-  roscpp
-  rosbag
-)
+    rosbuild_init()
+endif()
 
-find_package(cmake_modules REQUIRED)
-find_package(Eigen REQUIRED)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_MODULE_PATH   ${PROJECT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
+
+find_package(Eigen3 REQUIRED)
+find_package(SuiteParse REQUIRED) # Apparently needed by g2o
 find_package(X11 REQUIRED)
-include(cmake/FindG2O.cmake)
-include(cmake/FindSuiteParse.cmake)
-
-#find csparse
-#FIND_PACKAGE(SuiteSparse)
-IF(CSPARSE_FOUND)
-MESSAGE(STATUS "CSPARSE FOUND")
-ELSE(CSPARSE_FOUND)
-MESSAGE(STATUS "CSPARSE NOT FOUND")
-ENDIF(CSPARSE_FOUND)
-
-#########################################################
-# FIND X11
-#########################################################
-find_package(X11)
-if(NOT X11_FOUND)
-	message(FATAL_ERROR "Failed to find X11")
-endif(NOT X11_FOUND)
-      
-message("-- CHOLMOD_INCLUDE_DIR : " ${CHOLMOD_INCLUDE_DIR})
-message("-- CSPARSE_INCLUDE_DIR : " ${CSPARSE_INCLUDE_DIR})
-message("-- G2O_INCLUDE_DIR : " ${G2O_INCLUDE_DIR})
-message("-- EIGEN3_INCLUDE_DIR : " ${EIGEN3_INCLUDE_DIR})
-message("-- EIGEN_INCLUDE_DIR : " ${EIGEN_INCLUDE_DIR})
-message("-- X11_LIBRARIES : " ${X11_LIBRARIES})
 
 # FabMap
 # uncomment this part to enable fabmap
-add_subdirectory(${PROJECT_SOURCE_DIR}/thirdparty/openFabMap)
-include_directories(${PROJECT_SOURCE_DIR}/thirdparty/openFabMap/include)
-add_definitions("-DHAVE_FABMAP")
-set(FABMAP_LIB openFABMAP )
+#add_subdirectory(${PROJECT_SOURCE_DIR}/thirdparty/openFabMap)
+#include_directories(${PROJECT_SOURCE_DIR}/thirdparty/openFabMap/include)
+#add_definitions("-DHAVE_FABMAP")
+#set(FABMAP_LIB openFABMAP )
 
-generate_dynamic_reconfigure_options(
-  cfg/LSDDebugParams.cfg
-  cfg/LSDParams.cfg
-)
+if(NOT BUILD_WITHOUT_ROS)
+    # Dynamic Reconfigure Services
+    rosbuild_find_ros_package(dynamic_reconfigure)
+    include(${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake)
+    gencfg()
 
-catkin_package(
-  LIBRARIES lsdslam
-  DEPENDS Eigen SuiteSparse
-  CATKIN_DEPENDS libg2o #lsd_slam_viewer
-)
-
-# SSE flags
-add_definitions("-DUSE_ROS")
+    # SSE flags
+    rosbuild_check_for_sse()
+    add_definitions("-DUSE_ROS")
+else()
+    find_package(Boost REQUIRED COMPONENTS thread system)
+    find_package(OpenCV REQUIRED)
+endif()
 add_definitions("-DENABLE_SSE")
 
 # Also add some useful compiler flag
-#set(CMAKE_CXX_FLAGS
-#   "${CMAKE_CXX_FLAGS} -march=native -Wall -std=c++0x"
-#)
-
-# Notes from stackoverflow:
-# The short solution would be removing '-march=native' option (at least it worked for me).
-# Instead of falling back to the default SSE2, if you care about performance, 
-# you are better off with enabling optimization the instruction set closest to AVX 
-# which would be SSE4.2. So I'd rather replace -march=native with -msse4.2. 
-# Even better: -march=native -mno-avx. Or see the answer by @capisce
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -msse4.2 -Wall -D_REENTRANT --std=c++0x")
-
-# On Mac OSX it is not possible to build with at least clang shipped by Apple
-# my guess due to lack of some c++0x/C++11 features
-# However gcc unable to link against libraries built by clang
-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-	# SET (CMAKE_C_COMPILER             "/usr/bin/clang")
-	# SET (CMAKE_CXX_COMPILER             "/usr/bin/clang++")
-	#     SET (CMAKE_AR      "/usr/bin/llvm-ar")
-	#     SET (CMAKE_LINKER  "/usr/bin/llvm-ld")
-	#     SET (CMAKE_NM      "/usr/bin/llvm-nm")
-	#     SET (CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
-	#     SET (CMAKE_RANLIB  "/usr/bin/llvm-ranlib")
-	# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
-	SET (CMAKE_C_COMPILER             "/usr/local/bin/gcc")
-	SET (CMAKE_CXX_COMPILER             "/usr/local/bin/g++")
-	SET (CMAKE_AR      "/usr/local/bin/ar")
-	SET (CMAKE_LINKER  "/usr/local/bin/ld")
-	SET (CMAKE_NM      "/usr/local/bin/nm")
-	SET (CMAKE_OBJDUMP "/usr/local/bin/objdump")
-	SET (CMAKE_RANLIB  "/usr/local/bin/ranlib")
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4.2 -Wall -D_REENTRANT --std=c++0x")
-else()
-	# SSE flags
-	set(CMAKE_CXX_FLAGS
-	"${CMAKE_CXX_FLAGS} -march=native -Wall -std=c++0x"
-	)
-endif()
-
-
+set(CMAKE_CXX_FLAGS
+   "${CMAKE_CXX_FLAGS} ${SSE_FLAGS} -march=native  -std=c++0x"
+)
 
 # Set source files
 set(lsd_SOURCE_FILES
@@ -137,51 +72,57 @@ set(lsd_SOURCE_FILES
   ${PROJECT_SOURCE_DIR}/src/GlobalMapping/g2oTypeSim3Sophus.cpp
   ${PROJECT_SOURCE_DIR}/src/GlobalMapping/TrackableKeyFrameSearch.cpp
 )
+
+if(NOT BUILD_WITHOUT_ROS)
+    set(ADDITIONAL_ROS_SOURCES
+        ${PROJECT_SOURCE_DIR}/src/IOWrapper/ROS/ROSImageStreamThread.cpp
+        ${PROJECT_SOURCE_DIR}/src/IOWrapper/ROS/ROSOutput3DWrapper.cpp
+        )
+endif()
 set(SOURCE_FILES
   ${lsd_SOURCE_FILES}
-  ${PROJECT_SOURCE_DIR}/src/IOWrapper/ROS/ROSImageStreamThread.cpp
-  ${PROJECT_SOURCE_DIR}/src/IOWrapper/ROS/ROSOutput3DWrapper.cpp
   ${PROJECT_SOURCE_DIR}/src/IOWrapper/OpenCV/ImageDisplay_OpenCV.cpp
+  ${ADDITIONAL_ROS_SOURCES}
 )
-
+# The variables EXTRA_INCLUDE_DIRS and EXTRA_LIB_DIRS can be used to
+# inject non-standard library paths for local builds of libraries that
+# aren't in system directories - for example, g2o
 include_directories(
-  include
-  ${EIGEN_INCLUDE_DIR}
   ${EIGEN3_INCLUDE_DIR}
   ${PROJECT_SOURCE_DIR}/src
   ${PROJECT_SOURCE_DIR}/thirdparty/Sophus
   ${CSPARSE_INCLUDE_DIR} #Has been set by SuiteParse
   ${CHOLMOD_INCLUDE_DIR} #Has been set by SuiteParse
+  ${EXTRA_INCLUDE_DIRS}
 )
+link_directories(${EXTRA_LIB_DIRS})
+
 
 
 # build shared library.
-<<<<<<< HEAD
-rosbuild_add_library(lsdslam SHARED ${SOURCE_FILES})
-target_link_libraries(lsdslam ${FABMAP_LIB} g2o_core g2o_stuff csparse cxsparse g2o_solver_csparse g2o_csparse_extension g2o_types_sim3 g2o_types_sba X11)
-rosbuild_link_boost(lsdslam thread)
-=======
-add_library(lsdslam SHARED ${SOURCE_FILES})
-target_link_libraries(lsdslam ${FABMAP_LIB} ${G2O_LIBRARIES} ${catkin_LIBRARIES} ${CSPARSE_LIBRARY}) 
-#csparse cxsparse )
-#rosbuild_link_boost(lsdslam thread)
->>>>>>> catkin-mac
+if (BUILD_WITHOUT_ROS)
+    set(PLATFORM_SPECIFIC_LIBRARIES ${Boost_LIBRARIES}
+        ${OpenCV_LIBS}
+        )
+    add_library(lsdslam SHARED ${SOURCE_FILES})
+else()
+    set(PLATFORM_SPECIFIC_LIBRARIES X11)
+    rosbuild_add_library(lsdslam SHARED ${SOURCE_FILES})
+    rosbuild_link_boost(lsdslam thread)
+endif()
+
+target_link_libraries(lsdslam ${FABMAP_LIB} g2o_core g2o_stuff cxsparse g2o_solver_csparse g2o_csparse_extension g2o_types_sim3 g2o_types_sba
+    ${PLATFORM_SPECIFIC_LIBRARIES}
+    )
 
 
-# build live ros node
-add_executable(live_slam src/main_live_odometry.cpp)
-target_link_libraries(live_slam lsdslam ${catkin_LIBRARIES} ${G2O_LIBRARIES} ${X11_LIBRARIES} )
+if(NOT BUILD_WITHOUT_ROS)
+    # build live ros node
+    rosbuild_add_executable(live_slam src/main_live_odometry.cpp)
+    target_link_libraries(live_slam lsdslam)
 
 
-# build image node
-<<<<<<< HEAD
-rosbuild_add_executable(dataset_slam src/main_on_images.cpp)
-target_link_libraries(dataset_slam lsdslam)
-=======
-add_executable(dataset src/main_on_images.cpp)
-target_link_libraries(dataset lsdslam ${catkin_LIBRARIES} ${G2O_LIBRARIES})
-
-# TODO add INSTALL
-
->>>>>>> catkin-mac
-
+    # build image node
+    rosbuild_add_executable(dataset_slam src/main_on_images.cpp)
+    target_link_libraries(dataset_slam lsdslam)
+endif()
