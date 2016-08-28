@@ -43,13 +43,15 @@ and one window showing the 3D map (from viewer). If for some reason the initiali
 
 
 # 2. Installation
-We tested LSD-SLAM on two different system configurations, using Ubuntu 12.04 (Precise) and ROS fuerte, or Ubuntu 14.04 (trusty) and ROS indigo. Note that building without ROS is not supported, however ROS is only used for input and output, facilitating easy portability to other platforms.
+We tested LSD-SLAM on four different system configurations, using Ubuntu 12.04 (Precise) and ROS fuerte, Ubuntu 14.04 (trusty) and ROS indigo,
+Ubuntu 14.04 stand-alone, and MacOSX Yosemite stand-alone. Since ROS is used for input and output, the stand-alone builds do not install any 
+front-end executable programs.
 
 
 ## 2.1 ROS fuerte + Ubuntu 12.04
 Install system dependencies:
 
-    sudo apt-get install ros-fuerte-libg2o liblapack-dev libblas-dev freeglut3-dev libqglviewer-qt4-dev libsuitesparse-dev
+    sudo apt-get install ros-fuerte-libg2o liblapack-dev libblas-dev freeglut3-dev libqglviewer-qt4-dev libsuitesparse-dev libx11-dev
 
 In your ROS package path, clone the repository:
 
@@ -78,7 +80,7 @@ For this you need to create a rosbuild workspace (if you don't have one yet), us
 
 Install system dependencies:
 
-    sudo apt-get install ros-indigo-libg2o ros-indigo-cv-bridge liblapack-dev libblas-dev freeglut3-dev libqglviewer-dev libsuitesparse-dev
+    sudo apt-get install ros-indigo-libg2o ros-indigo-cv-bridge liblapack-dev libblas-dev freeglut3-dev libqglviewer-dev libsuitesparse-dev libx11-dev
 
 In your ROS package path, clone the repository:
 
@@ -102,8 +104,37 @@ Build order a bit strange as core package depends on one header from viewer pack
 	catkin_make --pkg lsd_slam_viewer
 	catkin_make --pkg lsd_slam_core
 
+## 2.3 Stand-alone CMake build
+Install system-wide dependencies through your package manager (brew, apt-get - as above, but omitting ros-related packages) or 
+manually. The command to install dependencies with Homebrew (http://brew.sh) is given below.
 
-## 2.3 openFabMap for large loop-closure detection [optional]
+    brew install eigen suite-sparse opencv cmake
+
+Clone and build g2o in the directory of your choice.
+
+    git clone https://github.com/RainerKuemmerle/g2o
+    cd g2o
+    mkdir build
+    cd build
+    cmake -DCMAKE_INSTALL_PREFIX=../install
+    make -j8
+    make install
+
+Continue as you would for any other cmake build. The only difference is that you will only build lsd_slam_core, and that you will
+probably have to provide the BUILD_WITHOUT_ROS, EXTRA_LIB_DIRS, and EXTRA_INCLUDE_DIRS variables to cmake.
+
+    git clone https://github.com/tum-vision/lsd_slam.git lsd_slam
+    cd lsd_slam/lsd_slam_core
+    mkdir build
+    cd build
+    cmake -DEXTRA_LIB_DIRS=/path/to/g2o/lib/ -DEXTRA_INCLUDE_DIRS=/path/to/g2o/include -DBUILD_WITHOUT_ROS=ON ../
+    make -j8
+
+Please note that this process only builds the lsd_slam library, and no programs with which you can test it. This build method could be 
+useful in integrating lsd_slam with other projects.
+
+
+## 2.4 openFabMap for large loop-closure detection [optional]
 If you want to use openFABMAP for large loop closure detection, uncomment the following lines in `lsd_slam_core/CMakeLists.txt` :
 
     #add_subdirectory(${PROJECT_SOURCE_DIR}/thirdparty/openFabMap)
@@ -172,7 +203,7 @@ This one is without radial distortion correction, as a special case of ATAN came
     width height
 
 
-#### Calibration File for OpenCV camera model [untested!]:
+#### Calibration File for OpenCV camera model:
 
     fx fy cx cy k1 k2 p1 p2
     inputWidth inputHeight
@@ -314,5 +345,28 @@ LSD-SLAM is licensed under the GNU General Public License Version 3 (GPLv3), see
 For commercial purposes, we also offer a professional version under different licencing terms.
 
 
+
+# 6 Troubleshoot / FAQ
+
+**How can I get the live-pointcloud in ROS to use with RVIZ?**
+
+You cannot, at least not on-line and in real-time. The reason is the following:
+
+In the background, LSD-SLAM continuously optimizes the pose-graph, i.e., the poses of all keyframes. Each time a keyframe's pose changes (which happens all the time, if only by a little bit), all points from this keyframe change their 3D position with it. Hence, you would have to continuously re-publish and re-compute the whole pointcloud (at 100k points per keyframe and up to 1000 keyframes for the longer sequences, that's 100 million points, i.e., ~1.6GB), which would crush real-time performance.
+
+Instead, this is solved in LSD-SLAM by publishing keyframes and their poses separately:
+- keyframeGraphMsg contains the updated pose of each keyframe, nothing else.
+- keyframeMsg contains one frame with it's pose, and - if it is a keyframe - it's points in the form of a depth map.
+
+Points are then always kept in their keyframe's coodinate system: That way, a keyframe's pose can be changed without even touching the points. In fact, in the viewer, the points in the keyframe's coodinate frame are moved to a GLBuffer immediately and never touched again - the only thing that changes is the pushed modelViewMatrix before rendering. 
+
+Note that "pose" always refers to a Sim3 pose (7DoF, including scale) - which ROS doesn't even have a message type for.
+
+If you need some other way in which the map is published (e.g. publish the whole pointcloud as ROS standard message as a service), the easiest is to implement your own Output3DWrapper.
+
+
+**Tracking immediately diverges / I keep getting "TRACKING LOST for frame 34 (0.00% good Points, which is -nan% of available points, DIVERGED)!"**
+- double-check your camera calibration.
+- try more translational movement and less roational movement
 
 
