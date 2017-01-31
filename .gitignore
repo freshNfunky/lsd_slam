@@ -26,6 +26,11 @@ lsd_slam_viewer/thirdparty/Sophus/CMakeFiles/
 lsd_slam_viewer/thirdparty/Sophus/Makefile
 lsd_slam_viewer/thirdparty/Sophus/SophusConfig.cmake
 
+[Bb]uild/
+build/
+CMakeFiles/
+lsd_slam_core.build/
+
 cmake_install.cmake
 *.cfgc
 

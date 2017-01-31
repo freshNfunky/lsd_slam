@@ -1,0 +1,1062 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		5F5ACFEA8E4B49F8B112391C /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8843628DEA314070AC162C65 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				E76C9FFB6648426384D79286 /* CMake Rules */,
+			);
+			dependencies = (
+				DD78C0DF2A6A4C96AAF768C9 /* PBXTargetDependency */,
+				568964EF4B2F454D8D0F18C2 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		78BCA3CCF18B4EF797325648 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8B675F77AAA74B52920B9990 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				829801B06D454BA68EC93DF7 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		182FEFF0E14745C38209931F /* FrameMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7B223784942A410C6C9 /* FrameMemory.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		2DA5F15711674F09A6594A17 /* TrackableKeyFrameSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DA70F45220D40FC870D20FD /* TrackableKeyFrameSearch.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		30D314B61BA742FC8C9B59A4 /* SE3Tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8435D7B995DB408F94F5CCB2 /* SE3Tracker.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		36982B95B17440048ED31234 /* globalFuncs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1AB89E3741C45379BF5D049 /* globalFuncs.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		4A260F71742D48FBA871CE7C /* FabMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9221B1BF94149D8BD57FDB5 /* FabMap.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5DBAC39F46FC4495B7857D11 /* FramePoseStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CA239C999794E32B97E6AA1 /* FramePoseStruct.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		676FF24CAA244E09A75BB580 /* settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 307CC499A3DB4483B885943C /* settings.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		6AD9CAC340344D08908A9799 /* TrackingReference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 774F11AB752F408888B3C133 /* TrackingReference.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		7E93570358894FB9B918E3E5 /* DepthMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D7EDA1FFE69432BB64D5837 /* DepthMap.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		85466909E1774D9D9E26EAFA /* g2oTypeSim3Sophus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C3DF80D9F594FCBB421A20B /* g2oTypeSim3Sophus.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		8B44B6E09CFA46CB83DFCA90 /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5257BB22C5FB44D0B3BC53AD /* Frame.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		A5D183FCE5CA45D5AC9E5668 /* LiveSLAMWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D337E00944C0483A9EB34BE1 /* LiveSLAMWrapper.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		B4E8246FB6EA4222A5A1E13D /* SophusUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C2C828BF7994914A26DE0AD /* SophusUtil.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		B8323A47FCAC4968BD0CD53E /* ImageDisplay_OpenCV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C61E3D71E6ED49F4852D6838 /* ImageDisplay_OpenCV.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BD62F2CFA6854E73A37C66E5 /* Timestamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7553BD1DFD4502BABFE13A /* Timestamp.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BE395C44CCE74D3D8E9803C7 /* DepthMapPixelHypothesis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E70F5A26374F37B541A542 /* DepthMapPixelHypothesis.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C61921283DA842FCA9B32654 /* Sim3Tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1565046061C43B18DED2643 /* Sim3Tracker.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		E00EE9B9AAEC41CF83516112 /* Undistorter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6E459353BC340F199E68BD1 /* Undistorter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		E49EDA9C7A914AF885D71C54 /* KeyFrameGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9408E2E5F7447CFBE5B24A3 /* KeyFrameGraph.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		F004ED35E9F34BB28CD209FC /* SlamSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EED56481117640E2991C6AE1 /* SlamSystem.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		FFE83CBAF70645ADBBE14D5F /* Relocalizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5ADFC5BCDAF7416799C1EDA2 /* Relocalizer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30D4F6873EF94760866335DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B240344BA1E2458288F10735 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78BCA3CCF18B4EF797325648;
+			remoteInfo = ZERO_CHECK;
+		};
+		4A3E97F2AF84463E8641338A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B240344BA1E2458288F10735 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78BCA3CCF18B4EF797325648;
+			remoteInfo = ZERO_CHECK;
+		};
+		E50F1052D6A14CF5A1BC1DE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B240344BA1E2458288F10735 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65D56D301415422E9E1F0010;
+			remoteInfo = lsdslam;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C2C828BF7994914A26DE0AD /* SophusUtil.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SophusUtil.cpp; path = src/util/SophusUtil.cpp; sourceTree = SOURCE_ROOT; };
+		1F604C90CA3948FCBEBDE4BC /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		307CC499A3DB4483B885943C /* settings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = settings.cpp; path = src/util/settings.cpp; sourceTree = SOURCE_ROOT; };
+		4F7553BD1DFD4502BABFE13A /* Timestamp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Timestamp.cpp; path = src/IOWrapper/Timestamp.cpp; sourceTree = SOURCE_ROOT; };
+		5257BB22C5FB44D0B3BC53AD /* Frame.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Frame.cpp; path = src/DataStructures/Frame.cpp; sourceTree = SOURCE_ROOT; };
+		53993F61477B46CEA12C1346 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5ADFC5BCDAF7416799C1EDA2 /* Relocalizer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Relocalizer.cpp; path = src/Tracking/Relocalizer.cpp; sourceTree = SOURCE_ROOT; };
+		5C3DF80D9F594FCBB421A20B /* g2oTypeSim3Sophus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = g2oTypeSim3Sophus.cpp; path = src/GlobalMapping/g2oTypeSim3Sophus.cpp; sourceTree = SOURCE_ROOT; };
+		5CA239C999794E32B97E6AA1 /* FramePoseStruct.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FramePoseStruct.cpp; path = src/DataStructures/FramePoseStruct.cpp; sourceTree = SOURCE_ROOT; };
+		6D7EDA1FFE69432BB64D5837 /* DepthMap.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DepthMap.cpp; path = src/DepthEstimation/DepthMap.cpp; sourceTree = SOURCE_ROOT; };
+		73A05883ABDE4D46AECBE068 /* liblsdslam.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = liblsdslam.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		774F11AB752F408888B3C133 /* TrackingReference.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TrackingReference.cpp; path = src/Tracking/TrackingReference.cpp; sourceTree = SOURCE_ROOT; };
+		7D77D7B223784942A410C6C9 /* FrameMemory.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FrameMemory.cpp; path = src/DataStructures/FrameMemory.cpp; sourceTree = SOURCE_ROOT; };
+		7DA70F45220D40FC870D20FD /* TrackableKeyFrameSearch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TrackableKeyFrameSearch.cpp; path = src/GlobalMapping/TrackableKeyFrameSearch.cpp; sourceTree = SOURCE_ROOT; };
+		8435D7B995DB408F94F5CCB2 /* SE3Tracker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SE3Tracker.cpp; path = src/Tracking/SE3Tracker.cpp; sourceTree = SOURCE_ROOT; };
+		A1565046061C43B18DED2643 /* Sim3Tracker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sim3Tracker.cpp; path = src/Tracking/Sim3Tracker.cpp; sourceTree = SOURCE_ROOT; };
+		A66AAB1C822648BFA015A266 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A8E70F5A26374F37B541A542 /* DepthMapPixelHypothesis.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = DepthMapPixelHypothesis.cpp; path = src/DepthEstimation/DepthMapPixelHypothesis.cpp; sourceTree = SOURCE_ROOT; };
+		A9221B1BF94149D8BD57FDB5 /* FabMap.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FabMap.cpp; path = src/GlobalMapping/FabMap.cpp; sourceTree = SOURCE_ROOT; };
+		A9408E2E5F7447CFBE5B24A3 /* KeyFrameGraph.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = KeyFrameGraph.cpp; path = src/GlobalMapping/KeyFrameGraph.cpp; sourceTree = SOURCE_ROOT; };
+		C61E3D71E6ED49F4852D6838 /* ImageDisplay_OpenCV.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ImageDisplay_OpenCV.cpp; path = src/IOWrapper/OpenCV/ImageDisplay_OpenCV.cpp; sourceTree = SOURCE_ROOT; };
+		D1AB89E3741C45379BF5D049 /* globalFuncs.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = globalFuncs.cpp; path = src/util/globalFuncs.cpp; sourceTree = SOURCE_ROOT; };
+		D337E00944C0483A9EB34BE1 /* LiveSLAMWrapper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = LiveSLAMWrapper.cpp; path = src/LiveSLAMWrapper.cpp; sourceTree = SOURCE_ROOT; };
+		D6E459353BC340F199E68BD1 /* Undistorter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Undistorter.cpp; path = src/util/Undistorter.cpp; sourceTree = SOURCE_ROOT; };
+		EED56481117640E2991C6AE1 /* SlamSystem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SlamSystem.cpp; path = src/SlamSystem.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		092D7AE0A7E246AAA0BC015C = {
+			isa = PBXGroup;
+			children = (
+				D8775330AA42494882D802D1 /* Sources */,
+				187531D6E6F94BDBA1B3AF38 /* Resources */,
+				1D8F1C92777843BABE9804E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		187531D6E6F94BDBA1B3AF38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1D8F1C92777843BABE9804E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73A05883ABDE4D46AECBE068 /* liblsdslam.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		300474210A4D4DCDA1AF663D /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				70FDC91C7AC34069B74841AE /* CMake Rules */,
+				A66AAB1C822648BFA015A266 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		3593A594069D471AA1277F71 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				5257BB22C5FB44D0B3BC53AD /* Frame.cpp */,
+				7D77D7B223784942A410C6C9 /* FrameMemory.cpp */,
+				5CA239C999794E32B97E6AA1 /* FramePoseStruct.cpp */,
+				6D7EDA1FFE69432BB64D5837 /* DepthMap.cpp */,
+				A8E70F5A26374F37B541A542 /* DepthMapPixelHypothesis.cpp */,
+				A9221B1BF94149D8BD57FDB5 /* FabMap.cpp */,
+				A9408E2E5F7447CFBE5B24A3 /* KeyFrameGraph.cpp */,
+				7DA70F45220D40FC870D20FD /* TrackableKeyFrameSearch.cpp */,
+				5C3DF80D9F594FCBB421A20B /* g2oTypeSim3Sophus.cpp */,
+				C61E3D71E6ED49F4852D6838 /* ImageDisplay_OpenCV.cpp */,
+				4F7553BD1DFD4502BABFE13A /* Timestamp.cpp */,
+				D337E00944C0483A9EB34BE1 /* LiveSLAMWrapper.cpp */,
+				EED56481117640E2991C6AE1 /* SlamSystem.cpp */,
+				5ADFC5BCDAF7416799C1EDA2 /* Relocalizer.cpp */,
+				8435D7B995DB408F94F5CCB2 /* SE3Tracker.cpp */,
+				A1565046061C43B18DED2643 /* Sim3Tracker.cpp */,
+				774F11AB752F408888B3C133 /* TrackingReference.cpp */,
+				0C2C828BF7994914A26DE0AD /* SophusUtil.cpp */,
+				D6E459353BC340F199E68BD1 /* Undistorter.cpp */,
+				D1AB89E3741C45379BF5D049 /* globalFuncs.cpp */,
+				307CC499A3DB4483B885943C /* settings.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		3DD38AC27B834FF387348DC9 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		597E4627D2DE4AC9BED33078 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				3DD38AC27B834FF387348DC9 /* CMake Rules */,
+				53993F61477B46CEA12C1346 /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		70FDC91C7AC34069B74841AE /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		D8775330AA42494882D802D1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F92E9F9E3AC545689F1FCB3C /* lsdslam */,
+				300474210A4D4DCDA1AF663D /* ALL_BUILD */,
+				597E4627D2DE4AC9BED33078 /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		F92E9F9E3AC545689F1FCB3C /* lsdslam */ = {
+			isa = PBXGroup;
+			children = (
+				3593A594069D471AA1277F71 /* Source Files */,
+				1F604C90CA3948FCBEBDE4BC /* CMakeLists.txt */,
+			);
+			name = lsdslam;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65D56D301415422E9E1F0010 /* lsdslam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6C012F60B384C9B9C882177 /* Build configuration list for PBXNativeTarget "lsdslam" */;
+			buildPhases = (
+				A2D9530F0F004689AE6D0781 /* Sources */,
+				5E674E5B132C4368BD731966 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				535ED95BE9A94728B8246C59 /* PBXTargetDependency */,
+			);
+			name = lsdslam;
+			productName = lsdslam;
+			productReference = 73A05883ABDE4D46AECBE068 /* liblsdslam.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B240344BA1E2458288F10735 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0800;
+			};
+			buildConfigurationList = B2EFA62D06A244A89E3C8BB7 /* Build configuration list for PBXProject "lsd_slam_core" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 092D7AE0A7E246AAA0BC015C;
+			projectDirPath = /Users/felixschaller/git/lsd_slam/lsd_slam_core;
+			projectRoot = "";
+			targets = (
+				5F5ACFEA8E4B49F8B112391C /* ALL_BUILD */,
+				78BCA3CCF18B4EF797325648 /* ZERO_CHECK */,
+				65D56D301415422E9E1F0010 /* lsdslam */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E674E5B132C4368BD731966 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/felixschaller/git/lsd_slam/Core_Build -f /Users/felixschaller/git/lsd_slam/Core_Build/CMakeScripts/lsdslam_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		829801B06D454BA68EC93DF7 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/felixschaller/git/lsd_slam/Core_Build -f /Users/felixschaller/git/lsd_slam/Core_Build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		E76C9FFB6648426384D79286 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/felixschaller/git/lsd_slam/Core_Build -f /Users/felixschaller/git/lsd_slam/Core_Build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2D9530F0F004689AE6D0781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B44B6E09CFA46CB83DFCA90 /* Frame.cpp in Sources */,
+				182FEFF0E14745C38209931F /* FrameMemory.cpp in Sources */,
+				5DBAC39F46FC4495B7857D11 /* FramePoseStruct.cpp in Sources */,
+				7E93570358894FB9B918E3E5 /* DepthMap.cpp in Sources */,
+				BE395C44CCE74D3D8E9803C7 /* DepthMapPixelHypothesis.cpp in Sources */,
+				4A260F71742D48FBA871CE7C /* FabMap.cpp in Sources */,
+				E49EDA9C7A914AF885D71C54 /* KeyFrameGraph.cpp in Sources */,
+				2DA5F15711674F09A6594A17 /* TrackableKeyFrameSearch.cpp in Sources */,
+				85466909E1774D9D9E26EAFA /* g2oTypeSim3Sophus.cpp in Sources */,
+				B8323A47FCAC4968BD0CD53E /* ImageDisplay_OpenCV.cpp in Sources */,
+				BD62F2CFA6854E73A37C66E5 /* Timestamp.cpp in Sources */,
+				A5D183FCE5CA45D5AC9E5668 /* LiveSLAMWrapper.cpp in Sources */,
+				F004ED35E9F34BB28CD209FC /* SlamSystem.cpp in Sources */,
+				FFE83CBAF70645ADBBE14D5F /* Relocalizer.cpp in Sources */,
+				30D314B61BA742FC8C9B59A4 /* SE3Tracker.cpp in Sources */,
+				C61921283DA842FCA9B32654 /* Sim3Tracker.cpp in Sources */,
+				6AD9CAC340344D08908A9799 /* TrackingReference.cpp in Sources */,
+				B4E8246FB6EA4222A5A1E13D /* SophusUtil.cpp in Sources */,
+				E00EE9B9AAEC41CF83516112 /* Undistorter.cpp in Sources */,
+				36982B95B17440048ED31234 /* globalFuncs.cpp in Sources */,
+				676FF24CAA244E09A75BB580 /* settings.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		535ED95BE9A94728B8246C59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78BCA3CCF18B4EF797325648 /* ZERO_CHECK */;
+			targetProxy = 30D4F6873EF94760866335DB /* PBXContainerItemProxy */;
+		};
+		568964EF4B2F454D8D0F18C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78BCA3CCF18B4EF797325648 /* ZERO_CHECK */;
+			targetProxy = 4A3E97F2AF84463E8641338A /* PBXContainerItemProxy */;
+		};
+		DD78C0DF2A6A4C96AAF768C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65D56D301415422E9E1F0010 /* lsdslam */;
+			targetProxy = E50F1052D6A14CF5A1BC1DE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08E5370D9C3243E89B92F85D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/RelWithDebInfo;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					lsdslam_EXPORTS,
+					ENABLE_SSE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/RelWithDebInfo;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-march=native",
+					"-std=c++0x",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"-lg2o_core",
+					"-lg2o_stuff",
+					"/usr/local/Cellar/suite-sparse/4.5.3/lib/libcxsparse.3.1.9.dylib",
+					"-lg2o_solver_csparse",
+					"-lg2o_csparse_extension",
+					"-lg2o_types_sim3",
+					"-lg2o_types_sba",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_chrono-mt.dylib",
+					"/usr/local/lib/libboost_date_time-mt.dylib",
+					"/usr/local/lib/libboost_atomic-mt.dylib",
+					/usr/local/lib/libopencv_videostab.2.4.13.dylib,
+					/usr/local/lib/libopencv_ts.a,
+					/usr/local/lib/libopencv_superres.2.4.13.dylib,
+					/usr/local/lib/libopencv_stitching.2.4.13.dylib,
+					/usr/local/lib/libopencv_contrib.2.4.13.dylib,
+					/usr/local/lib/libopencv_nonfree.2.4.13.dylib,
+					/usr/local/lib/libopencv_ocl.2.4.13.dylib,
+					/usr/local/lib/libopencv_gpu.2.4.13.dylib,
+					/usr/local/lib/libopencv_photo.2.4.13.dylib,
+					/usr/local/lib/libopencv_objdetect.2.4.13.dylib,
+					/usr/local/lib/libopencv_legacy.2.4.13.dylib,
+					/usr/local/lib/libopencv_video.2.4.13.dylib,
+					/usr/local/lib/libopencv_ml.2.4.13.dylib,
+					/usr/local/lib/libopencv_calib3d.2.4.13.dylib,
+					/usr/local/lib/libopencv_features2d.2.4.13.dylib,
+					/usr/local/lib/libopencv_highgui.2.4.13.dylib,
+					/usr/local/lib/libopencv_imgproc.2.4.13.dylib,
+					/usr/local/lib/libopencv_flann.2.4.13.dylib,
+					/usr/local/lib/libopencv_core.2.4.13.dylib,
+					"-framework",
+					OpenCL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lsdslam;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		10B5EB5CB0244DCB8CC67263 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+					"/usr/local/Cellar/suite-sparse/4.5.3/include",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/suite-sparse/4.5.3/lib";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		32CFFD84C97E4C87B3C48255 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		3E81B650B02443F5B22B5EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		4261F958AA604F01BE32D8FA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		494AF49609E14F53AFCC36E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+					"/usr/local/Cellar/suite-sparse/4.5.3/include",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/suite-sparse/4.5.3/lib";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		575D5F15F93C4F31B426E6CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/Release;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					lsdslam_EXPORTS,
+					ENABLE_SSE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/Release;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-march=native",
+					"-std=c++0x",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"-lg2o_core",
+					"-lg2o_stuff",
+					"/usr/local/Cellar/suite-sparse/4.5.3/lib/libcxsparse.3.1.9.dylib",
+					"-lg2o_solver_csparse",
+					"-lg2o_csparse_extension",
+					"-lg2o_types_sim3",
+					"-lg2o_types_sba",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_chrono-mt.dylib",
+					"/usr/local/lib/libboost_date_time-mt.dylib",
+					"/usr/local/lib/libboost_atomic-mt.dylib",
+					/usr/local/lib/libopencv_videostab.2.4.13.dylib,
+					/usr/local/lib/libopencv_ts.a,
+					/usr/local/lib/libopencv_superres.2.4.13.dylib,
+					/usr/local/lib/libopencv_stitching.2.4.13.dylib,
+					/usr/local/lib/libopencv_contrib.2.4.13.dylib,
+					/usr/local/lib/libopencv_nonfree.2.4.13.dylib,
+					/usr/local/lib/libopencv_ocl.2.4.13.dylib,
+					/usr/local/lib/libopencv_gpu.2.4.13.dylib,
+					/usr/local/lib/libopencv_photo.2.4.13.dylib,
+					/usr/local/lib/libopencv_objdetect.2.4.13.dylib,
+					/usr/local/lib/libopencv_legacy.2.4.13.dylib,
+					/usr/local/lib/libopencv_video.2.4.13.dylib,
+					/usr/local/lib/libopencv_ml.2.4.13.dylib,
+					/usr/local/lib/libopencv_calib3d.2.4.13.dylib,
+					/usr/local/lib/libopencv_features2d.2.4.13.dylib,
+					/usr/local/lib/libopencv_highgui.2.4.13.dylib,
+					/usr/local/lib/libopencv_imgproc.2.4.13.dylib,
+					/usr/local/lib/libopencv_flann.2.4.13.dylib,
+					/usr/local/lib/libopencv_core.2.4.13.dylib,
+					"-framework",
+					OpenCL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lsdslam;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		72C4F662A50B45EAB8A95CCE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk;
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build/build;
+			};
+			name = MinSizeRel;
+		};
+		8039B3D7DB734862B9612AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+					"/usr/local/Cellar/suite-sparse/4.5.3/include",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/suite-sparse/4.5.3/lib";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		A314CB1C8A9F4092A9D2FD99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/Debug;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					lsdslam_EXPORTS,
+					ENABLE_SSE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/Debug;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-march=native",
+					"-std=c++0x",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"-lg2o_core",
+					"-lg2o_stuff",
+					"/usr/local/Cellar/suite-sparse/4.5.3/lib/libcxsparse.3.1.9.dylib",
+					"-lg2o_solver_csparse",
+					"-lg2o_csparse_extension",
+					"-lg2o_types_sim3",
+					"-lg2o_types_sba",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_chrono-mt.dylib",
+					"/usr/local/lib/libboost_date_time-mt.dylib",
+					"/usr/local/lib/libboost_atomic-mt.dylib",
+					/usr/local/lib/libopencv_videostab.2.4.13.dylib,
+					/usr/local/lib/libopencv_ts.a,
+					/usr/local/lib/libopencv_superres.2.4.13.dylib,
+					/usr/local/lib/libopencv_stitching.2.4.13.dylib,
+					/usr/local/lib/libopencv_contrib.2.4.13.dylib,
+					/usr/local/lib/libopencv_nonfree.2.4.13.dylib,
+					/usr/local/lib/libopencv_ocl.2.4.13.dylib,
+					/usr/local/lib/libopencv_gpu.2.4.13.dylib,
+					/usr/local/lib/libopencv_photo.2.4.13.dylib,
+					/usr/local/lib/libopencv_objdetect.2.4.13.dylib,
+					/usr/local/lib/libopencv_legacy.2.4.13.dylib,
+					/usr/local/lib/libopencv_video.2.4.13.dylib,
+					/usr/local/lib/libopencv_ml.2.4.13.dylib,
+					/usr/local/lib/libopencv_calib3d.2.4.13.dylib,
+					/usr/local/lib/libopencv_features2d.2.4.13.dylib,
+					/usr/local/lib/libopencv_highgui.2.4.13.dylib,
+					/usr/local/lib/libopencv_imgproc.2.4.13.dylib,
+					/usr/local/lib/libopencv_flann.2.4.13.dylib,
+					/usr/local/lib/libopencv_core.2.4.13.dylib,
+					"-framework",
+					OpenCL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lsdslam;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		C62109D12DF64BE69307F35A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk;
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build/build;
+			};
+			name = Release;
+		};
+		C852C6BC995C489FB3942D34 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/MinSizeRel;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					lsdslam_EXPORTS,
+					ENABLE_SSE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = /Users/felixschaller/git/lsd_slam/lsd_slam_core/lib/MinSizeRel;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/g2o/2016-04-24/lib";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-march=native",
+					"-std=c++0x",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"-lg2o_core",
+					"-lg2o_stuff",
+					"/usr/local/Cellar/suite-sparse/4.5.3/lib/libcxsparse.3.1.9.dylib",
+					"-lg2o_solver_csparse",
+					"-lg2o_csparse_extension",
+					"-lg2o_types_sim3",
+					"-lg2o_types_sba",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_chrono-mt.dylib",
+					"/usr/local/lib/libboost_date_time-mt.dylib",
+					"/usr/local/lib/libboost_atomic-mt.dylib",
+					/usr/local/lib/libopencv_videostab.2.4.13.dylib,
+					/usr/local/lib/libopencv_ts.a,
+					/usr/local/lib/libopencv_superres.2.4.13.dylib,
+					/usr/local/lib/libopencv_stitching.2.4.13.dylib,
+					/usr/local/lib/libopencv_contrib.2.4.13.dylib,
+					/usr/local/lib/libopencv_nonfree.2.4.13.dylib,
+					/usr/local/lib/libopencv_ocl.2.4.13.dylib,
+					/usr/local/lib/libopencv_gpu.2.4.13.dylib,
+					/usr/local/lib/libopencv_photo.2.4.13.dylib,
+					/usr/local/lib/libopencv_objdetect.2.4.13.dylib,
+					/usr/local/lib/libopencv_legacy.2.4.13.dylib,
+					/usr/local/lib/libopencv_video.2.4.13.dylib,
+					/usr/local/lib/libopencv_ml.2.4.13.dylib,
+					/usr/local/lib/libopencv_calib3d.2.4.13.dylib,
+					/usr/local/lib/libopencv_features2d.2.4.13.dylib,
+					/usr/local/lib/libopencv_highgui.2.4.13.dylib,
+					/usr/local/lib/libopencv_imgproc.2.4.13.dylib,
+					/usr/local/lib/libopencv_flann.2.4.13.dylib,
+					/usr/local/lib/libopencv_core.2.4.13.dylib,
+					"-framework",
+					OpenCL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = lsdslam;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		D9241B2C36F9430FA0AB6594 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		E15C1BDBAC9C4862BA328496 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/usr/local/include/eigen3,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/src,
+					/Users/felixschaller/git/lsd_slam/lsd_slam_core/thirdparty/Sophus,
+					"/usr/local/Cellar/g2o/2016-04-24/include",
+					"/usr/local/Cellar/suite-sparse/4.5.3/include",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/suite-sparse/4.5.3/lib";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		E5C92C565FE9457FBC146A42 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk;
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		E85C913AA3324FCDA5089BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk;
+				SYMROOT = /Users/felixschaller/git/lsd_slam/Core_Build/build;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8843628DEA314070AC162C65 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				494AF49609E14F53AFCC36E8 /* Debug */,
+				8039B3D7DB734862B9612AF9 /* Release */,
+				10B5EB5CB0244DCB8CC67263 /* MinSizeRel */,
+				E15C1BDBAC9C4862BA328496 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8B675F77AAA74B52920B9990 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E81B650B02443F5B22B5EDE /* Debug */,
+				D9241B2C36F9430FA0AB6594 /* Release */,
+				32CFFD84C97E4C87B3C48255 /* MinSizeRel */,
+				4261F958AA604F01BE32D8FA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2EFA62D06A244A89E3C8BB7 /* Build configuration list for PBXProject "lsd_slam_core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85C913AA3324FCDA5089BBC /* Debug */,
+				C62109D12DF64BE69307F35A /* Release */,
+				72C4F662A50B45EAB8A95CCE /* MinSizeRel */,
+				E5C92C565FE9457FBC146A42 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D6C012F60B384C9B9C882177 /* Build configuration list for PBXNativeTarget "lsdslam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A314CB1C8A9F4092A9D2FD99 /* Debug */,
+				575D5F15F93C4F31B426E6CB /* Release */,
+				C852C6BC995C489FB3942D34 /* MinSizeRel */,
+				08E5370D9C3243E89B92F85D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B240344BA1E2458288F10735 /* Project object */;
+}
